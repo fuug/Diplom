@@ -1,0 +1,59 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+{% block title %} {{ actor.name }} {% endblock title %}
+{% block container %}
+    <div class="container py-md-3">
+{% endblock container %}
+
+{% block sidebar %}
+    <div class="side-bar col-lg-4">
+{% endblock sidebar %}
+
+{% block movie %}
+    <div class="left-ads-display col-lg-8">
+        <div class="row">
+            <div class="desc1-left col-md-6">
+                <img src="{{ actor.image.url }}" class="img-fluid" alt="">
+            </div>
+            <div class="desc1-right col-md-6 pl-lg-4">
+                <h3 class="shop-sing editContent">
+                    О {{ actor.name }}
+                </h3>
+                <h5 class="editContent"></h5>
+                <span><strong>Возраст: </strong> {{ actor.age }} лет</span>
+                <br>
+                <span><strong>Принимал участия: </strong>
+                        {% for movie in actor.film_actor.all %}
+                            <li style="list-style: none;">
+                                <a style="text-decoration: none; color: rgb(255, 0, 56);" href="{{movie.get_absolute_url}}"> {{ movie.title }}</a>
+                            </li>
+                        {% endfor %}
+                </span>
+                <br>
+                <span>
+                    <strong>Карьера: </strong> {{ actor.career }}
+                </span>
+                <br>
+                <span>
+                    <strong>Дата рождения:</strong> {{ actor.dob }}
+                </span>
+                <br>
+                <span>
+                    <strong>Место рождения:</strong> {{ actor.bpl }}
+                </span>
+                <br>
+                <span>
+                    <strong>Рост:</strong> {{ actor.growth }}см
+                </span>
+            </div>
+        </div>
+        <div class="row sub-para-w3layouts mt-5">
+            <h3 class="shop-sing editContent">
+                О {{ actor.name }}
+            </h3><br>
+            <p class="editContent">
+                {{ actor.description|safe }}
+            </p>
+        </div>
+    </div>
+{% endblock movie %}

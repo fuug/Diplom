@@ -1,0 +1,33 @@
+{% extends 'movies/base.html' %}
+{% block title %} Избранное {% endblock title %}
+{% block movie %}
+    <div class="left-ads-display col-lg-9">
+        <div class="row">
+            {% for movie in user.favoritemovie_set.all %}
+                        <div class="col-md-4 product-men">
+                            <div class="product-shoe-info editContent text-center mt-lg-4">
+                                <div class="men-thumb-item">
+                                    <img src="{{ movie.movie.poster.url }}" class="img-fluid img-main" alt="">
+                                </div>
+                                <div class="item-info-product">
+                                    <h4 class="">
+                                        <a href="{{ movie.movie.get_absolute_url }}"
+                                           class="editContent">
+                                            {{ movie.movie.title }}
+                                            {{ movie.in_fav }}
+                                        </a>
+                                    </h4>
+
+                                    <div class="product_price">
+                                        <div class="grid-price">
+                                            <span class="money editContent">{{ movie.movie.tagline }}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock movie %}
