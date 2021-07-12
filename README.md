@@ -4,22 +4,4 @@
     </a>
 </p>
 
-<h2 align="center">Django Movie</h2>
-
-[Сайт](https://djangochannel.com)
-[YouTube](https://www.youtube.com/channel/UC_hPYclmFCIENpMUHpPY8FQ?view_as=subscriber)
-
-Кинобиблиотека на Django 3.
-
-Проект написан в рамках обучающего курса по Django 3 на youtube.
-
-- Категории
-- Жанры
-- Фильмы
-- Кадры из фильма
-- Режиссеры\Актеры
-- Звезды рейтинга
-- Отзывы
-- Фильтры
-
-
+<h2 align="center">Wiki Films</h2>
